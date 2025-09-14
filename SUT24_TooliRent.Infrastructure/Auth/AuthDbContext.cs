@@ -10,4 +10,5 @@ public class AuthDbContext : IdentityDbContext<IdentityUser, IdentityRole, strin
     {
         
     }
+
 }

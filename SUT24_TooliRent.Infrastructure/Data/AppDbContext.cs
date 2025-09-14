@@ -5,7 +5,7 @@ namespace SUT24_TooliRent.Infrastructure.Data;
 
 public class AppDbContext : DbContext
 {
-    public AppDbContext(DbContextOptions<DbContext> options) : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
 
@@ -122,12 +122,5 @@ public class AppDbContext : DbContext
         entity.Property(w => w.UpdatedDate).HasDefaultValueSql("GETDATE()");
     });
     
-        // Seed data
-        SeedData(modelBuilder); 
-    }
-
-    private void SeedData(ModelBuilder modelBuilder)
-    {
-        throw new NotImplementedException();
     }
 }
