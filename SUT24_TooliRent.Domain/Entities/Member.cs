@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace SUT24_TooliRent.Domain.Entities;
 
 public class Member
@@ -15,8 +17,11 @@ public class Member
     public string PasswordHash { get; set; }
     public string PasswordSalt { get; set; }
     public string Role { get; set; } 
+    
+    public string IdentityUserId { get; set; }   // FK till IdentityUser
 
     // Navigation properties
+    public IdentityUser IdentityUser { get; set; } 
     public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     public ICollection<Certification> Certifications { get; set; } = new List<Certification>();
 
